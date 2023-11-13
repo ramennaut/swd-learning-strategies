@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Global variables */
+:root {
+    --font-sans: 'Poppins', 'Arial', sans-serif;
+    --fun-grad: linear-gradient(to right, #f32170, #ff6b08, #cf23cf, #eedd44);
+    --dark-gray: #222;
+    --card-width: 200px;
+    --card-height: 125px;
+    --card-margin: 16px;
+}
+
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-sans);
+    box-sizing: border-box;
+    color: var(--dark-gray);
+    scroll-behavior: smooth;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+}
+
+.slides {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    color: #fff;
+    gap: 25px;
+    scroll-snap-align: start;
+    padding: 0 15vw;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 600;
+    background: var(--fun-grad);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text; 
+}
+
+p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 125%;
+}
+
+ul {
+    margin-left: 25px;
+}
+
+img {
+    width: 250px;
+}
+
+.buttons {
+    display: flex;
+    gap: 20px
+}
+
+a button {
+    border: none;
+    outline: none;
+    position: relative;
+    border-radius: 20px;
+    padding: 10px 20px;
+    background: var(--fun-grad);
+    cursor: pointer;
+    z-index: 1;
+}
+
+a button::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    bottom: 2px;
+    left: 2px;
+    background-color: white;
+    border-radius: 18px;
+    z-index: -1;
+    transition: 200ms;
+}
+
+a button::after {
+    content: attr(data);
+    font-size: 16px;
+    background: var(--fun-grad);
+    -webkit-background-clip: text;
+    color: transparent;
+    transition: 200ms;
+}
+
+a button:hover::before {
+    opacity: 0%;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+}
+
+a button:hover::after {
+    color: white;
+}
+
+/* Title slide */
+.title h1 {
+    font-size: 70px;
+    font-weight: 600;
+    max-width: 650px;
+    line-height: 125%;
+    background: var(--fun-grad);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text; 
+}
+
+.title h2 {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 125%;
+    color: var(--dark-gray); 
+}
+
+.title a {
+    text-decoration: none;
+}
+
+.title a:hover {
+    text-decoration: none;
+    color: blue;
+    font-weight: 500;
+}
+
+/* Team slide */
+.team-intro {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: var(--card-width);
+    height: var(--card-height);
+    margin: var(--card-margin);
+    border-radius: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    color: var(--dark-gray);
+}
+
+.card img {
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
+    border-radius: 100px;
+}
+
+.card h2 {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.card p {
+    font-size: 10px;
+    font-weight: 400;
+}
+
+.placeholder {
+    height: 75px;
+    width: 75px;
+    background-color: pink;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+/* Pass 2 stles */
+.pass2 h1 {
+    font-size: 40px;
+    font-weight: 600;
+    max-width: 650px;
+    line-height: 125%;
+    background: var(--fun-grad);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text; 
+}
+
+.insights h1 {
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 125%;
+    background: var(--fun-grad);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text; 
+}
+
+.slide-content {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 20px;
+}
